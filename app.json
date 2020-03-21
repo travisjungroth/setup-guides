@@ -5,7 +5,7 @@
       "description": "https://docs.djangoproject.com/en/dev/ref/settings/#std:setting-SECRET_KEY"
     },
     "DATABASE_URL": {
-      "description": "https://github.com/kennethreitz/dj-database-url",
+      "description": "Is required, but review apps break with it marked as required. https://github.com/kennethreitz/dj-database-url",
       "required": false
     },
     "CI": {
