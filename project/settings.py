@@ -104,4 +104,5 @@ if LOG_TO_SENTRY:
     sentry_sdk.init(
         dsn=ENV('SENTRY_DSN'),
         integrations=[DjangoIntegration()],
+        environment=ENV('HEROKU_APP_NAME'),
     )
