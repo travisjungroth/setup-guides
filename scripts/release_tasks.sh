@@ -1,7 +1,6 @@
 #!/bin/bash
 python manage.py migrate --noinput || exit
-if [ -n "$CI" ]
-# [ -n "$REVIEW_APP" ] &&
+if [ -n "$REVIEW_APP" ] && [ -n "$CI" ]
 then
   VERSION=$(sentry-cli releases propose-version)
   sentry-cli releases new -p starter "$VERSION"
