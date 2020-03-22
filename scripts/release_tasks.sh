@@ -1,5 +1,6 @@
 #!/bin/bash
-python manage.py migrate --noinput || exit
+set -e
+python manage.py migrate --noinput
 if [ -z "$HEROKU_SLUG_COMMIT" ]
 then
   curl -sL https://sentry.io/get-cli/ | bash
