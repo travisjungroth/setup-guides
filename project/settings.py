@@ -105,5 +105,5 @@ if LOG_TO_SENTRY:
         dsn=ENV('SENTRY_DSN'),
         integrations=[DjangoIntegration()],
         environment=ENV('HEROKU_APP_NAME'),
-        release=ENV('HEROKU_SLUG_COMMIT', None),
+        release=ENV('HEROKU_SLUG_COMMIT', None)
     )
