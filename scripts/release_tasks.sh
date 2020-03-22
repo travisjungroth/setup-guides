@@ -2,8 +2,8 @@
 python manage.py migrate --noinput || exit
 if [ -n "$REVIEW_APP" ] && [ -n "$CI" ]
 then
-  VERSION=$(sentry-cli releases propose-version)
-  sentry-cli releases new -p starter "$VERSION"
-  sentry-cli releases set-commits --auto "$VERSION"
-  sentry-cli releases finalize "$VERSION"
+  curl -sL https://sentry.io/get-cli/ | bash
+  sentry-cli releases new -p starter "$HEROKU_SLUG_COMMIT"
+  sentry-cli releases set-commits --auto "$HEROKU_SLUG_COMMIT"
+  sentry-cli releases finalize "$HEROKU_SLUG_COMMIT"
 fi
