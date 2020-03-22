@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 python manage.py migrate --noinput
-if [ -z "$HEROKU_SLUG_COMMIT" ]
+if [ -n "$HEROKU_SLUG_COMMIT" ]
 then
   echo "Installing sentry-cli"
   curl -sL https://sentry.io/get-cli/ | bash
