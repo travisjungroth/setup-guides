@@ -1,6 +1,6 @@
 #!/bin/bash
 python manage.py migrate --noinput || exit
-if [ -n "$REVIEW_APP" ] && [ -n "$CI" ]
+if [ -z "$REVIEW_APP" ] && [ -z "$CI" ]
 then
   curl -sL https://sentry.io/get-cli/ | bash
   sentry-cli releases new -p starter "$HEROKU_SLUG_COMMIT"
