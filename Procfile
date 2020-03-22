@@ -1,2 +1,2 @@
 web: gunicorn project.wsgi
-release: python manage.py migrate --noinput
+release: scripts/release_tasks.sh

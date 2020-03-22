@@ -1,7 +1,8 @@
 from os import path
 
 import environ
-
+import sentry_sdk
+from sentry_sdk.integrations.django import DjangoIntegration
 
 ROOT = environ.Path(__file__).path('../' * 2)
 ENV = environ.Env(DJANGO_DEBUG=(bool, False), )
@@ -97,3 +98,12 @@ ALLOWED_HOSTS = ['*']
 STATIC_ROOT = ROOT('staticfiles')
 STATICFILES_DIRS = ['static']
 STATIC_URL = '/static/'
+
+LOG_TO_SENTRY = ENV('LOG_TO_SENTRY', default=False)
+if LOG_TO_SENTRY:
+    sentry_sdk.init(
+        dsn=ENV('SENTRY_DSN'),
+        integrations=[DjangoIntegration()],
+        environment=ENV('HEROKU_APP_NAME'),
+        release=ENV('HEROKU_SLUG_COMMIT', None)
+    )

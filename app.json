@@ -15,6 +15,13 @@
     "CODACY_PROJECT_TOKEN": {
       "description": "Token to export from the CI server to Codacy.",
       "required": false
+    },
+    "LOG_TO_SENTRY": {
+      "required": false
+    },
+    "SENTRY_DSN": {
+      "description": "https://docs.sentry.io/clients/java/config/#setting-the-dsn",
+      "required": false
     }
   },
   "addons": [
