@@ -6,4 +6,5 @@ then
   sentry-cli releases new -p starter "$HEROKU_SLUG_COMMIT"
   sentry-cli releases set-commits -c "$HEROKU_SLUG_COMMIT"
   sentry-cli releases finalize "$HEROKU_SLUG_COMMIT"
+  sentry-cli releases deploys "$HEROKU_SLUG_COMMIT" new -e "$HEROKU_APP_NAME"
 fi
