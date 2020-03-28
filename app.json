@@ -27,21 +27,6 @@
   "addons": [
     "heroku-postgresql"
   ],
-  "environments": {
-      "test": {
-        "addons": [
-          "heroku-postgresql:in-dyno"
-        ],
-        "scripts": {
-          "test": "scripts/ci_test.sh"
-        },
-        "env":{
-          "DJANGO_SECRET_KEY": {
-            "generator": "secret"
-          }
-        }
-      }
-  },
   "buildpacks": [
     {
       "url": "heroku/python"
