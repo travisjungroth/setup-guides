@@ -1,7 +1,7 @@
 ### Setup
-Install postgres and pipenv if you haven't.
-Run scripts/setup.sh from the base directory of the project.
-Run pipenv install --dev  
+Install [Postgres](https://gist.github.com/ibraheem4/ce5ccd3e4d7a65589ce84f2a3b7c23a3) and [Pipenv](https://pipenv-fork.readthedocs.io/en/latest/index.html#install-pipenv-today) if you don't have them.  
+Run `scripts/setup.sh` from the base directory of the project.  
+Run `pipenv install --dev` 
 
 ### Tests
 #### Running    
@@ -11,7 +11,7 @@ Run pipenv install --dev
 
     pytest --cov=.
     
-#### Recreate the database (runs migrations)
+#### Recreate the test database (runs migrations)
 
     pytest --create-db test_basics.py::test_database
 
@@ -19,7 +19,5 @@ Run pipenv install --dev
 #### Development
     
     ./manage.py runserver
-    
-#### Local Heroku
-    
-    heroku local
+
+Set DEBUG=true in .env for the debug server.
