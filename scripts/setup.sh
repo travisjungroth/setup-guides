@@ -1,6 +1,6 @@
 #!/bin/bash
 set -e
-read -rp 'Database Name: ' db_name
+db_name = "highly_composite"
 password=$(openssl rand -hex 32)
 scripts/createdb.sh "${db_name}" "${password}"
 echo "DATABASE_URL=postgres://${db_name}_user:$password@localhost:5432/$db_name" >> .env
