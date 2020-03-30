@@ -1,109 +1,127 @@
 # Setup
 
-Install brew
-prereqs:
-MacOS 10.13 or higher
-Test
-Run system_profiler SPSoftwareDataType
-System version is > 10.13
+These instruction are an opinionated step-by-step guide aimed at beginners on MacOS. Unless you're installing this onto a new machine, you'll probably already have some of the requirements installed. To check if you can skip a section, use that section's Verification and skip if it already passes. Any step that's in code formatting `like this` means to enter the command in [Terminal](https://support.apple.com/guide/terminal/open-or-quit-terminal-apd5265185d-f365-44cb-8b09-71a064a42125/mac).
 
-Bourne compatible shell
-Test
-Run echo $0
-The output should have bash or zsh in it
+### Install Homebrew
+#### Requirements
+<details><summary>MacOS 10.13 or higher</summary>
+<strong>Testing this requirement</strong></br>
 
-Actions
-Go to brew.sh
-Copy the install command
-Paste it into terminal
+1. `system_profiler SPSoftwareDataType`
+2. System version should be >= 10.13
 
-Verification
-Run brew --version
-
-Install pyenv
-Prereqs:
-Brew
-
-Actions
-run brew install pyenv
-
-Verification
-pyenv --version
+</details>
 
 
-Add pyenv to shell complete
-Prereqs
+<details><summary>Bourne compatible shell</summary>
+<strong>Testing this requirement</strong>
+  
+1. `echo $0`
+2. The output should have "bash" or "zsh" in it
+
+</details>
+
+#### Steps
+1. Go to https://brew.sh
+2. Copy the install command on the home page
+3. Run the install command
+
+#### Verification
+
+1. Run `brew --version`
+2. It should return the Homebrew version.
+
+### Install pyenv
+#### Prerequisites
+Homebrew
+
+#### Steps
+1. `brew install pyenv`
+
+#### Verification
+1. `pyenv --version`
+2. It should return the pyenv version.
+
+### Add pyenv to shell profile
+#### Requirements
 pyenv
 
-Actions
-echo -e 'if command -v pyenv 1>/dev/null 2>&1; then\n  eval "$(pyenv init -)"\nfi' >> ~/.bash_profile
+### Steps
+1. `echo -e 'if command -v pyenv 1>/dev/null 2>&1; then\n  eval "$(pyenv init -)"\nfi' >> ~/.bash_profile`
+2. Close and reopen Terminal.
 
-Verification
-pyenv shell
-pyenv: no shell-specific version configured is good
-pyenv: shell integration not enabled. Run `pyenv init' for instructions. is bad
+#### Verification
+1. `pyenv shell`
+2. It should return "pyenv: no shell-specific version configured" or a Python version number.
 
+### Install Pipenv
+#### Requirements
+Homebrew
 
-Install pipenv
-Prereqs:
-Brew
+#### Steps
+1. `brew install pipenv`
 
-Actions
-run brew install pipenv
+#### Verification
+1. `pipenv --version`
+2. It should return the Pipenv version.
 
-Verification
-pipenv --version
+### Install postgres
+#### Requirements
+Homebrew
 
-Install postgres
-Prereqs:
-brew
+#### Steps
+1. `brew install postgres`
+2. `brew services start postgresql`
+3. `createdb $whoami`
 
-Actions:
-brew install postgres
-brew services start postgresql
-createdb $whoami
+#### Verification
+1. `psql -c 'SELECT 0'`
+2. Check it matches the output below
+````
+   ?column? 
+  ----------
+          0
+  (1 row)
+````
 
-
-Verification
-psql -c 'SELECT 0'
-
-
-Clone the project
-Prereqs:
+### Clone the repo
+#### Requirements
 git
 
-Test:
-git --version
+#### Steps
+1. Use `cd` to change into an existing parent directory where you want the project located. For example, if you want it in ~/code/highlycomposite, run `cd ~/code`.
+2. `git clone https://github.com/highlycomposite/highlycomposite.git`
+3. `cd highlycomposite`
 
-Actions
-cd into parent directory
-run git clone https://github.com/highlycomposite/highlycomposite.git
-cd highlycomposite
+#### Verification
+1. `pwd`
+2. It should return the directory where you want this project, ending in highlycomposite.
+3. `git remote show origin`
+4. The "Fetch URL" and "Push URL" should be https://github.com/highlycomposite/highlycomposite.git
 
-Verification
-pwd to check path
-git remote show origin to see tracking
-ls to see files
+### Install the Python dependencies
+#### Requirements
+Pipenv  
+pyenv  
+Cloned repo
 
+#### Steps
+1. `pipenv sync --dev`
+2. Enter "y" if promted
 
-Run pipenv install --dev
-Prereqs:
-pipenv
-pyenv
-project cloned
-
-Action
-pipenv sync --dev
-Hit yes if needed
-
-Verification
-pipenv run python --version
+#### Verification
+1. `pipenv run python --version`
+2. `cat runtime.txt`
+3. These should return the same Python version.
 
 
-Run the setup script
-prereqs:
-project
+### Run the setup script
+#### Requirements
+Cloned repo
 
-Verification
-pipenv run pytest
+#### Steps
+1. `scripts/setup.sh`
 
+#### Verification
+1. `pipenv run pytest`
+2. The tests should run and all pass, with "\[100%\]" visible.
