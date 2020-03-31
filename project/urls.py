@@ -7,5 +7,4 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('allauth.urls')),
     path('', views.Home.as_view(), name='home'),
-    path('sentry-debug/', views.trigger_error),
 ]
