@@ -2,7 +2,7 @@
 Make sure either a virtual environment is active (use `pipenv shell`), or prepend each command here with `pipenv run`.
 
 ### Server
-For local development use the built in Django [development server](https://docs.djangoproject.com/en/3.0/ref/django-admin/#runserver). 
+For local development use the built in Django [development server](https://docs.djangoproject.com/en/3.0/ref/django-admin/#runserver). It defaults to `127.0.0.1:8000`.
 
     ./manage.py runserver
    
