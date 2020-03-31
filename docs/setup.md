@@ -125,3 +125,5 @@ Cloned repo
 #### Verification
 1. `pipenv run pytest`
 2. The tests should run and all pass, with "\[100%\]" visible.
+
+Now that it's set up, try [running the tests](/docs/testing.md) to verify the installation. Then, [run the server](/docs/running.md).
