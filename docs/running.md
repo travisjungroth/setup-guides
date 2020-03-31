@@ -1,5 +1,5 @@
 # Running
-Make sure to either activate a virtual environment with `pipenv shell`, or prepend each command here with `pipenv run`.
+Make sure either a virtual environment is active (use `pipenv shell`), or prepend each command here with `pipenv run`.
 
 ### Server
 For local development use the built in Django [development server](https://docs.djangoproject.com/en/3.0/ref/django-admin/#runserver). 
