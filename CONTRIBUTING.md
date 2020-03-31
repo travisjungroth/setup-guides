@@ -1,8 +1,8 @@
 ## Contributing
 This is a new project that's just getting started. If you have any questions or ideas, email me at travis@highlycomposite.com.
 
-1. [Set up](https://github.com/highlycomposite/highlycomposite#setup) the project.
-2. Find an [issue](https://github.com/highlycomposite/highlycomposite/issues?q=is%3Aopen+is%3Aissue) that looks interesting. The ones labeled [good-first-issue](https://github.com/highlycomposite/highlycomposite/contribute) are best for starting.
+1. [Set up](/docs/setup.md) the project.
+2. Find an [issue](https://github.com/highlycomposite/highlycomposite/issues?q=is%3Aopen+is%3Aissue) that looks interesting. The ones labeled [good-first-issue](https://github.com/highlycomposite/highlycomposite/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22+sort%3Acreated-asc) are best for starting.
 3. Make the changes locally, test it, push a commit.
 4. Open a PR, and I'll get auto assigned as a reviewer.
 
