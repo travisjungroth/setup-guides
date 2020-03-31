@@ -1,4 +1,6 @@
 # Testing
+Make sure either a virtual environment is active (use `pipenv shell`), or prepend each command here with `pipenv run`.
+
 ## Running tests
 
     pytest
