@@ -23,12 +23,12 @@ These instruction are an opinionated step-by-step guide aimed at beginners on Ma
 
 #### Steps
 1. Go to https://brew.sh
-2. Copy the install command on the home page
-3. Run the install command
+2. Copy the install command on the home page.
+3. Run the install command.
 
 #### Verification
 
-1. Run `brew --version`
+1. `brew --version`
 2. It should return the Homebrew version.
 
 ### Install pyenv
@@ -65,7 +65,7 @@ Homebrew
 1. `pipenv --version`
 2. It should return the Pipenv version.
 
-### Install postgres
+### Install Postgres
 #### Requirements
 Homebrew
 
@@ -76,7 +76,7 @@ Homebrew
 
 #### Verification
 1. `psql -c 'SELECT 0'`
-2. Check it matches the output below
+2. Check it matches the output below.
 ````
    ?column? 
   ----------
