@@ -16,3 +16,8 @@ def test_admin_response(client):
 @mark.django_db()
 def test_database():
     get_user_model().objects.all().exists()
+
+@mark.django_db()
+def test_heartbeat_response(client):
+    response = client.get("/heartbeat")
+    assert response.status_code == 200
