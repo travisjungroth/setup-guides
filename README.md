@@ -1,7 +1,7 @@
 # Highly Composite
 The problem we're trying to solve is how hard it is for junior software engineers to contribute. How we'll do that is [unsure](https://github.com/highlycomposite/highlycomposite/wiki/Roadmap). Here's how [you can help](https://github.com/highlycomposite/highlycomposite/blob/master/CONTRIBUTING.md).
 
-### [Setup Instructions](/SETUP.md) 
+### [Setup Instructions](/docs/setup.md) 
 
 ### Tests
 #### Running  
