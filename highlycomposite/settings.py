@@ -26,6 +26,7 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'sortedm2m',
+    'django_admin_generator',
     'guides',
 ]
 
