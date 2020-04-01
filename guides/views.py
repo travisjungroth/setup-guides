@@ -1,3 +1,8 @@
-from django.shortcuts import render
+from django.views.generic import DetailView
 
-# Create your views here.
+from guides.models import Guide
+
+
+class GuideDetail(DetailView):
+    model = Guide
+

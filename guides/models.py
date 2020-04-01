@@ -4,6 +4,7 @@ from sortedm2m.fields import SortedManyToManyField
 
 class Guide(models.Model):
     title = models.CharField(max_length=255)
+    slug = models.SlugField()
     steps = SortedManyToManyField('Step')
 
 
