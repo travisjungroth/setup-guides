@@ -25,6 +25,7 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
+    'guides',
 ]
 
 AUTHENTICATION_BACKENDS = (
