@@ -7,4 +7,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('allauth.urls')),
     path('', views.Home.as_view(), name='home'),
+    path('heartbeat/', views.heartbeat)
 ]
