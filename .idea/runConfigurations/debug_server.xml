@@ -1,6 +1,6 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="debug server" type="Python.DjangoServer" factoryName="Django server">
-    <module name="starter" />
+    <module name="highlycomposite" />
     <option name="INTERPRETER_OPTIONS" value="" />
     <option name="PARENT_ENVS" value="true" />
     <envs>
@@ -8,7 +8,7 @@
       <env name="DJANGO_SETTINGS_MODULE" value="project.settings" />
       <env name="DJANGO_DEBUG" value="True" />
     </envs>
-    <option name="SDK_HOME" value="$USER_HOME$/.local/share/virtualenvs/starter-5bxFdb_C/bin/python" />
+    <option name="SDK_HOME" value="$USER_HOME$/.local/share/virtualenvs/highlycomposite-0h6M4jZa/bin/python" />
     <option name="WORKING_DIRECTORY" value="" />
     <option name="IS_MODULE_SDK" value="false" />
     <option name="ADD_CONTENT_ROOTS" value="true" />
