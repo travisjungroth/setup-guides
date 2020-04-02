@@ -9,5 +9,5 @@ urlpatterns = [
     path('accounts/', include('allauth.urls')),
     path('', highly_composite_views.Home.as_view(), name='home'),
     path('heartbeat/', highly_composite_views.heartbeat, name='heartbeat'),
-    path('<slug:slug>/', guide_views.GuideDetail.as_view(), name='guide-detail'),
+    path('guides/<slug:slug>/', guide_views.GuideDetail.as_view(), name='guide-detail'),
 ]
