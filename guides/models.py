@@ -5,14 +5,14 @@ from sortedm2m.fields import SortedManyToManyField
 class Guide(models.Model):
     title = models.CharField(max_length=255)
     slug = models.SlugField()
-    steps = SortedManyToManyField('Step')
+    steps = SortedManyToManyField('Step', blank=True)
 
 
 class Step(models.Model):
     title = models.CharField(max_length=255)
     requirements = models.ManyToManyField('Step')
-    actions = SortedManyToManyField('Action')
-    verifications = SortedManyToManyField('Verification')
+    actions = models.ForeignKey('Action', blank=True)
+    verifications = SortedManyToManyField('Verification', blank=True)
 
 
 class Action(models.Model):

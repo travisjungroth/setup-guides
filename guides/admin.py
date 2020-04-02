@@ -7,7 +7,8 @@ from guides import models
 class GuideAdmin(admin.ModelAdmin):
     list_display = ('id', 'title', 'slug')
     list_filter = ('id', 'title', 'slug')
-    raw_id_fields = ('steps',)
+    prepopulated_fields = {'slug': ('title',)}
+    # raw_id_fields = ('steps',)
     search_fields = ('slug',)
 
 
@@ -15,7 +16,7 @@ class GuideAdmin(admin.ModelAdmin):
 class StepAdmin(admin.ModelAdmin):
     list_display = ('id', 'title')
     list_filter = ('id', 'title')
-    raw_id_fields = ('requirements', 'actions', 'verifications')
+    # raw_id_fields = ('requirements', 'actions', 'verifications')
 
 
 @admin.register(models.Action)
