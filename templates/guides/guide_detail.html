@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>Highly Composite</title>
+    </head>
+
+    <body>
+        <h1>{{ guide.title }}</h1><br>
+        {% for step in guide.steps.all %}
+            <h2>{{ step.title }}</h2>
+            <h3>Requirements</h3>
+                <ul>
+                {% for requirement in step.requires.all %}
+                    <li>{{ requirement.title }}</li>
+                {% endfor %}
+                </ul>
+            <h3>Actions</h3>
+                <ol>
+                {% for action in step.action_set.all %}
+                    <li>{{ action.text }}</li>
+                {% endfor %}
+                </ol>
+            <h3>Verifications</h3>
+                <ul>
+                {% for verification in step.verification_set.all %}
+                    <li>{{ verification.text }}</li>
+                {% endfor %}
+                </ul>
+        {% endfor %}
+    </body>
+</html>

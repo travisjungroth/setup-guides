@@ -36,3 +36,4 @@ class Action(OrderedModel):
 class Verification(OrderedModel):
     text = models.TextField()
     step = models.ForeignKey('Step', on_delete=models.CASCADE)
+    order_with_respect_to = 'step'
