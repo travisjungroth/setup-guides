@@ -8,10 +8,11 @@ python_version = "3.8.2"
 
 [dev-packages]
 "codacy-coverage" = "*"
+"factory_boy" = "*"
 pytest = "*"
 "pytest-cov" = "*"
 "pytest-django" = "*"
-"django-admin-generator" = "*"
+"pytest-factoryboy" = "*"
 
 [packages]
 "dj-database-url" = "*"
