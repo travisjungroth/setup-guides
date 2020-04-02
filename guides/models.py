@@ -17,13 +17,13 @@ class GuideStep(OrderedModel):
 
 class Step(models.Model):
     title = models.CharField(max_length=255)
-    requirements = models.ManyToManyField('self', through='Requirements', symmetrical=False, blank=True)
+    requires = models.ManyToManyField('self', through='Requirements', related_name='required_by', symmetrical=False, blank=True)
 
 
 class Requirements(OrderedModel):
-    required_by = models.ForeignKey('Step', on_delete=models.CASCADE)
-    requires = models.ForeignKey('Step', on_delete=models.CASCADE)
-    order_with_respect_to = 'requires'
+    required_by = models.ForeignKey('Step', related_name='+', on_delete=models.CASCADE)
+    requires = models.ForeignKey('Step', related_name='+', on_delete=models.CASCADE)
+    order_with_respect_to = 'required_by'
 
 
 class Action(OrderedModel):
