@@ -17,8 +17,7 @@ class GuideStep(OrderedModel):
 
 class Step(models.Model):
     title = models.CharField(max_length=255)
-    requires = models.ManyToManyField('self', through='Requirement', related_name='required_by', symmetrical=False,
-                                      blank=True)
+    requirements = models.ManyToManyField('self', through='Requirement', symmetrical=False, blank=True)
 
 
 class Requirement(OrderedModel):
@@ -29,11 +28,11 @@ class Requirement(OrderedModel):
 
 class Action(OrderedModel):
     text = models.TextField()
-    step = models.ForeignKey(Step, on_delete=models.CASCADE)
+    step = models.ForeignKey(Step, related_name='actions', on_delete=models.CASCADE)
     order_with_respect_to = 'step'
 
 
 class Verification(OrderedModel):
     text = models.TextField()
-    step = models.ForeignKey('Step', on_delete=models.CASCADE)
+    step = models.ForeignKey('Step', related_name='verifications', on_delete=models.CASCADE)
     order_with_respect_to = 'step'
