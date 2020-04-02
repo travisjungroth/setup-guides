@@ -1,4 +1,5 @@
 {% load bootstrap4 %}
+{% load guides %}
 <!doctype html>
 <html lang="en">
     <head>
@@ -20,13 +21,13 @@
             <h3>Actions</h3>
                 <ol>
                 {% for action in step.actions.all %}
-                    <li>{{ action.text }}</li>
+                    <li>{{ action.text|markdown|safe }}</li>
                 {% endfor %}
                 </ol>
             <h3>Verifications</h3>
                 <ul>
                 {% for verification in step.verifications.all %}
-                    <li>{{ verification.text }}</li>
+                    <li>{{ verification.text|markdown|safe }}</li>
                 {% endfor %}
                 </ul>
         {% endfor %}
