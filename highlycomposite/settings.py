@@ -25,7 +25,6 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
-    'django_admin_generator',
     'ordered_model',
     'guides',
 ]
