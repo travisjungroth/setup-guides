@@ -1,4 +1,5 @@
 from django.db import models
+from ordered_model.models import OrderedModel
 
 
 class Guide(models.Model):
@@ -10,12 +11,13 @@ class Guide(models.Model):
 class Step(models.Model):
     title = models.CharField(max_length=255)
     requirements = models.ManyToManyField('Step')
-    actions = models.ForeignKey('Action', blank=True, on_delete=models.PROTECT)
     # verifications = SortedManyToManyField('Verification', blank=True)
 
 
-class Action(models.Model):
+class Action(OrderedModel):
     text = models.TextField()
+    step = models.ForeignKey(Step, on_delete=models.PROTECT)
+    order_with_respect_to = 'step'
 
 
 class Verification(models.Model):
