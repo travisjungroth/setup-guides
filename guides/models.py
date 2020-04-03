@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 from ordered_model.models import OrderedModel
 
 
@@ -7,6 +8,9 @@ class Guide(models.Model):
     slug = models.SlugField(unique=True)
     notes = models.TextField(default='')
     steps = models.ManyToManyField('Step', through='GuideStep', blank=True)
+
+    def get_absolute_url(self):
+        return reverse('guide-detail', args=[self.slug])
 
 
 class GuideStep(OrderedModel):
@@ -20,6 +24,9 @@ class Step(models.Model):
     title = models.CharField(max_length=255)
     slug = models.SlugField(unique=True)
     requirements = models.ManyToManyField('self', through='Requirement', symmetrical=False, blank=True)
+
+    def get_absolute_url(self):
+        return reverse('step-detail', args=[self.slug])
 
 
 class Requirement(OrderedModel):
