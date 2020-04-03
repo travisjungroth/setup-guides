@@ -1,0 +1,18 @@
+{% load bootstrap4 %}
+{% load guides %}
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>Highly Composite</title>
+        {% bootstrap_css %}
+        {% bootstrap_javascript %}
+    </head>
+
+    <body>
+        <ul>
+            {% for step in step_list %}
+                <li><a href="{{ step.get_absolute_url }}">{{ step.title }}</a></li>
+            {% endfor %}
+        </ul>
+    </body>
+</html>
