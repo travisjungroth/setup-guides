@@ -5,7 +5,7 @@ This is a new project that's just getting started. If you have any questions or 
 2. Run the [tests](/docs/testing.md).
 3. Run the [server](/docs/running.md).
 4. Email travis@highlycomposite.com to get added as a collaborator to this repo (or you can [work from a fork](https://akrabat.com/the-beginners-guide-to-contributing-to-a-github-project/).
-4. Find an [issue](https://github.com/highlycomposite/highlycomposite/issues?q=is%3Aopen+is%3Aissue) that looks interesting. The ones labeled [good-first-issue](https://github.com/highlycomposite/highlycomposite/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22+sort%3Acreated-asc) are best for starting.
+4. Find an [issue](https://github.com/highly-composite/highly-composite/issues?q=is%3Aopen+is%3Aissue) that looks interesting. The ones labeled [good-first-issue](https://github.com/highly-composite/highly-composite/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22+sort%3Acreated-asc) are best for starting.
 5. Make the changes locally, test it, push a commit.
 6. Open a PR, and I'll get auto assigned as a reviewer.
 
