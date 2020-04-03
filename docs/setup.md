@@ -111,16 +111,16 @@ These instruction are an opinionated step-by-step guide aimed at beginners on Ma
 
 #### Steps
 
-1. Use `cd` to change into an existing parent directory where you want the project located. For example, if you want it in ~/code/highlycomposite, run `cd ~/code`.
-2. `git clone https://github.com/highlycomposite/highlycomposite.git`
-3. `cd highlycomposite`
+1. Use `cd` to change into an existing parent directory where you want the project located. For example, if you want it in ~/code/highly-composite, run `cd ~/code`.
+2. `git clone https://github.com/highly-composite/highly-composite.git`
+3. `cd highly-composite`
 
 #### Verification
 
 1. `pwd`
-2. It should return the directory where you want this project, ending in highlycomposite.
+2. It should return the directory where you want this project, ending in highly-composite.
 3. `git remote show origin`
-4. The "Fetch URL" and "Push URL" should be https://github.com/highlycomposite/highlycomposite.git
+4. The "Fetch URL" and "Push URL" should be https://github.com/highly-composite/highly-composite.git
 
 ### Install the Python dependencies
 
