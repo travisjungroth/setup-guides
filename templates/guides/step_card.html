@@ -1,0 +1,26 @@
+{% load guides %}
+<div class="card border-dark mb-3" style="max-width: 20rem;">
+    <div class="card-header">
+        <h2>{{ step.title }}{% if guide_step.optional %}<em> (optional)</em>{% endif %}</h2>
+    </div>
+    <div class="card-body">
+        {% if step.requirements.exists %}
+            <h4 class="card-title">Requirements</h4>
+            <ul>
+                {% for requirement in step.requirements.all %}
+                    <li>{{ requirement.title }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+        <h4 class="card-title">Actions</h4>
+        <ol>
+            {% for action in step.actions.all %}
+                <li>{{ action.text|markdown|safe }}</li>
+            {% endfor %}
+        </ol>
+        <h4 class="card-title">Verifications</h4>
+        {% for verification in step.verifications.all %}
+            <div>{{ verification.text|markdown|safe }}</div>
+        {% endfor %}
+    </div>
+</div>

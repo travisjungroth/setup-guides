@@ -2,25 +2,7 @@
 {% include 'header.html' %}
 <main role="main" class="flex-shrink-0">
     <div class="container">
-        <h2>{{ step.title }}</h2>
-        {% if step.requirements.exists %}
-            <h3>Requirements</h3>
-            <ul>
-                {% for requirement in step.requirements.all %}
-                    <li>{{ requirement.title }}</li>
-                {% endfor %}
-            </ul>
-        {% endif %}
-        <h3>Actions</h3>
-        <ol>
-            {% for action in step.actions.all %}
-                <li>{{ action.text|markdown|safe }}</li>
-            {% endfor %}
-        </ol>
-        <h3>Verifications</h3>
-        {% for verification in step.verifications.all %}
-            <div>{{ verification.text|markdown|safe }}</div>
-        {% endfor %}
+        {% include 'guides/step_card.html' %}
     </div>
 </main>
 {% include 'footer.html' %}
