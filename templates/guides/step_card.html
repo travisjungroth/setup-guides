@@ -11,6 +11,7 @@
                     <li>{{ requirement.title }}</li>
                 {% endfor %}
             </ul>
+            <hr />
         {% endif %}
         <h4 class="card-title">Actions</h4>
         <ol>
@@ -18,6 +19,7 @@
                 <li>{{ action.text|markdown|safe }}</li>
             {% endfor %}
         </ol>
+        <hr />
         <h4 class="card-title">Verifications</h4>
         {% for verification in step.verifications.all %}
             <div>{{ verification.text|markdown|safe }}</div>
