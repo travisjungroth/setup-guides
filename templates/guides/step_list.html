@@ -1,18 +1,12 @@
-{% load bootstrap4 %}
-{% load guides %}
-<!doctype html>
-<html lang="en">
-    <head>
-        <title>Highly Composite</title>
-        {% bootstrap_css %}
-        {% bootstrap_javascript %}
-    </head>
-
-    <body>
+{% include 'header.html' %}
+<main role="main" class="flex-shrink-0">
+    <div class="container">
+    <h1 class="mt-5">Steps</h1>
         <ul>
             {% for step in step_list %}
                 <li><a href="{{ step.get_absolute_url }}">{{ step.title }}</a></li>
             {% endfor %}
         </ul>
-    </body>
-</html>
+    </div>
+</main>
+{% include 'footer.html' %}
