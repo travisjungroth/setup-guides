@@ -9,6 +9,9 @@ class Guide(models.Model):
     notes = models.TextField(default='', blank=True)
     steps = models.ManyToManyField('Step', through='GuideStep', blank=True)
 
+    def __str__(self):
+        return self.title
+
     def get_absolute_url(self):
         return reverse('guide-detail', args=[self.slug])
 
@@ -24,6 +27,9 @@ class Step(models.Model):
     title = models.CharField(max_length=255)
     slug = models.SlugField(unique=True)
     requirements = models.ManyToManyField('self', through='Requirement', symmetrical=False, blank=True)
+
+    def __str__(self):
+        return self.title
 
     def get_absolute_url(self):
         return reverse('step-detail', args=[self.slug])
