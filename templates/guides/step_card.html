@@ -1,5 +1,5 @@
 {% load guides %}
-<div class="card border-dark mb-3 w-75">
+<div class="card border-dark mb-3 w-75" id="card-{{ step.slug }}">
     <h2 class="card-header">
         {{ step.title }}{% if guide_step.optional %}<small class="text-muted"> (optional)</small>{% endif %}
     </h2>
@@ -8,7 +8,7 @@
             <h4 class="card-title">Requirements</h4>
             <ul>
                 {% for requirement in step.requirements.all %}
-                    <li>{{ requirement.title }}</li>
+                    <li><a href="{% if requirement in guide.steps.all %}#card-{{ requirement.slug }}{% else %}{{ requirement.get_absolute_url }}{% endif %}">{{ requirement.title }}</a></li>
                 {% endfor %}
             </ul>
             <hr />
