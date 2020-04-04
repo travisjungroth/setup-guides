@@ -50,6 +50,7 @@ class VerificationInline(OrderedStackedInline):
 class StepAdmin(OrderedInlineModelAdminMixin, OrderedModelAdmin):
     list_display = ('id', 'title')
     list_filter = ('id', 'title')
+    prepopulated_fields = {'slug': ('title',)}
     inlines = (RequirementInline, ActionInline, VerificationInline)
 
 

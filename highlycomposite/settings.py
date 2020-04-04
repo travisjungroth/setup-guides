@@ -110,3 +110,7 @@ if LOG_TO_SENTRY:
         environment=ENV('HEROKU_APP_NAME'),
         release=ENV('HEROKU_SLUG_COMMIT', default=None)
     )
+
+BOOTSTRAP4 = {
+    'theme_url': 'https://stackpath.bootstrapcdn.com/bootswatch/4.4.1/simplex/bootstrap.min.css',
+}

@@ -6,7 +6,7 @@ from ordered_model.models import OrderedModel
 class Guide(models.Model):
     title = models.CharField(max_length=255)
     slug = models.SlugField(unique=True)
-    notes = models.TextField(default='')
+    notes = models.TextField(default='', blank=True)
     steps = models.ManyToManyField('Step', through='GuideStep', blank=True)
 
     def get_absolute_url(self):

@@ -1,18 +1,12 @@
-{% load bootstrap4 %}
-{% load guides %}
-<!doctype html>
-<html lang="en">
-    <head>
-        <title>Highly Composite</title>
-        {% bootstrap_css %}
-        {% bootstrap_javascript %}
-    </head>
-
-    <body>
+{% include 'header.html' %}
+<main role="main" class="flex-shrink-0">
+    <div class="container">
+    <h1 class="mt-5">Guides</h1>
         <ul>
             {% for guide in guide_list %}
                 <li><a href="{{ guide.get_absolute_url }}">{{ guide.title }}</a></li>
             {% endfor %}
         </ul>
-    </body>
-</html>
+    </div>
+</main>
+{% include 'footer.html' %}
