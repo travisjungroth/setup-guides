@@ -1,8 +1,8 @@
 {% load guides %}
-<div class="card border-dark mb-3" style="max-width: 20rem;">
-    <div class="card-header">
-        <h2>{{ step.title }}{% if guide_step.optional %}<em> (optional)</em>{% endif %}</h2>
-    </div>
+<div class="card border-dark mb-3 w-75">
+    <h2 class="card-header">
+        {{ step.title }}{% if guide_step.optional %}<small class="text-muted"> (optional)</small>{% endif %}
+    </h2>
     <div class="card-body">
         {% if step.requirements.exists %}
             <h4 class="card-title">Requirements</h4>
