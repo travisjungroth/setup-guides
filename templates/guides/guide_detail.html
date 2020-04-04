@@ -2,13 +2,14 @@
 {% load guides %}
 <!doctype html>
 <html lang="en">
-    <head>
-        <title>Highly Composite</title>
-        {% bootstrap_css %}
-        {% bootstrap_javascript %}
-    </head>
+<head>
+    <title>Highly Composite</title>
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+</head>
 
-    <body>
+<body>
+<header>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="#">Highly Composite</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03"
@@ -30,27 +31,32 @@
             </ul>
         </div>
     </nav>
-        <h1>{{ guide.title }}</h1><br>
+</header>
+<main role="main" class="flex-shrink-0">
+    <div class="container">
+        <h1 class="mt-5">How to Set Up {{ guide.title }}</h1><br>
         {% for step in guide.steps.all %}
             <h2>{{ step.title }}</h2>
             {% if step.requirements.exists %}
                 <h3>Requirements</h3>
                 <ul>
-                {% for requirement in step.requirements.all %}
-                    <li>{{ requirement.title }}</li>
-                {% endfor %}
+                    {% for requirement in step.requirements.all %}
+                        <li>{{ requirement.title }}</li>
+                    {% endfor %}
                 </ul>
             {% endif %}
             <h3>Actions</h3>
-                <ol>
+            <ol>
                 {% for action in step.actions.all %}
                     <li>{{ action.text|markdown|safe }}</li>
                 {% endfor %}
-                </ol>
+            </ol>
             <h3>Verifications</h3>
-                {% for verification in step.verifications.all %}
-                    <div>{{ verification.text|markdown|safe }}</div>
-                {% endfor %}
+            {% for verification in step.verifications.all %}
+                <div>{{ verification.text|markdown|safe }}</div>
+            {% endfor %}
         {% endfor %}
-    </body>
+    </div>
+</main>
+</body>
 </html>
