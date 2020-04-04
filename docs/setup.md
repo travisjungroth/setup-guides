@@ -133,7 +133,7 @@ These instruction are an opinionated step-by-step guide aimed at beginners on Ma
 #### Steps
 
 1. `pipenv sync --dev`
-2. Enter "y" if promted
+2. Enter "y" if prompted
 
 #### Verification
 
